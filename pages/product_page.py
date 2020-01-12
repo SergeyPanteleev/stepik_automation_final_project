@@ -12,7 +12,6 @@ class ProductPage(BasePage):
         except:
             assert False, "Basket's button is not found"
 
-
     def should_be_product_name(self):
         try:
             product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text

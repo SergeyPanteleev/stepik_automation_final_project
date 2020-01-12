@@ -1,11 +1,11 @@
 ﻿from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException #for test_product_page
-import math
+from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 from .locators import BasketPageLocators
+import math
 
 
 class BasePage():
@@ -31,14 +31,12 @@ class BasePage():
 
         return True
 
-
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
         except NoSuchElementException:
             return False
         return True
-
 
     def is_not_element_present(self, how, what, timeout=4):
         try:
@@ -72,7 +70,3 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-
-
-
-
